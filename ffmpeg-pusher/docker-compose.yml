@@ -1,0 +1,13 @@
+---
+version: "2"
+
+services:
+  ffmpeg-pusher:
+    build: .
+    container_name: ffmpeg-pusher
+    restart: unless-stopped
+    ports:
+      - "6776:6776/udp"
+    volumes:
+      - "/srv/mp3:/mp3:ro"
+
